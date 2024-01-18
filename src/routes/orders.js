@@ -1,6 +1,6 @@
 import express from "express";
 import Stripe from "stripe";
-import { stripeSecretKey } from "../config/constant.js";
+import { clientUrl, stripeSecretKey } from "../config/constant.js";
 
 const stripe = new Stripe(stripeSecretKey);
 
@@ -16,6 +16,9 @@ router.post("/create-checkout-session", async (req, res) => {
             currency: "usd",
             product_data: {
               name: item.name,
+              // image: [item.image || "https://i.ibb.co/JF4tyfX/food-landscape-9.jpg"],
+              // description: item.desc || "default description",
+              // metadata: item.id || "default664645",
             },
             unit_amount: item.price * 100,
           },
@@ -24,13 +27,18 @@ router.post("/create-checkout-session", async (req, res) => {
       }),
 
       // require for create session
+      // client_reference_id: rea.body.userId,
       payment_method_types: ["card"],
       mode: "payment",
       // TODO:
       // perfect way follow jonas video
       // because it should be dynamic
-      success_url: `http://localhost:5173/success`,
-      cancel_url: `http://localhost:5173/cancel`,
+      success_url: `${clientUrl}/success`,
+      // success_url: `http://localhost:5173/success`,
+      // TODO:
+      // for cancel we should take the user cart page again
+      cancel_url: `${clientUrl}`,
+      // cancel_url: `http://localhost:5173`,
     });
 
     res.json({ url: session.url });

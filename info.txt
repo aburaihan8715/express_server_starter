@@ -1,0 +1,27 @@
+
+## react_stripe_shop_api
+
+### =========references===========
+-tutorials
+https://www.youtube.com/watch?v=72iEz5iopqQ&t=1881s
+
+
+
+### features/actions
+
+
+### technologies used
+
+
+### completed tasks
+
+
+### pending tasks
+
+
+
+
+### steps for stripe
+1.search stripe accept payments
+2.copy paste the code
+
