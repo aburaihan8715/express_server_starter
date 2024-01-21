@@ -1,9 +1,6 @@
 import express from "express";
 import cors from "cors";
 import morgan from "morgan";
-import { seedRoutes } from "./src/routes/seed.js";
-import { productRoutes } from "./src/routes/products.js";
-import { orderRoutes } from "./src/routes/orders.js";
 
 export const app = express();
 
@@ -13,11 +10,18 @@ app.use(cors());
 app.use(morgan("dev"));
 
 // ROUTES
-app.use("/api/seed", seedRoutes);
-app.use("/api/products", productRoutes);
-app.use("/api/orders", orderRoutes);
 
 // HOME ROUTE
 app.get("/", (req, res) => {
-  console.log("Welcome to home route!!");
+  res.status(200).json({ status: "success", message: "welcome to home route!" });
+});
+
+// CLIENT ERROR ROUTE
+app.all("*", (req, res, next) => {
+  res.status(404).json({ status: "error", message: "route not found!" });
+});
+
+// SERVER ERROR ROUTE
+app.all((err, req, res) => {
+  res.status(500).json({ status: "error", message: "server error!" + err });
 });

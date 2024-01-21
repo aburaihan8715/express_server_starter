@@ -1,9 +1,9 @@
 
-## react_stripe_shop_api
+## express_mongoose_server_starter
 
 ### =========references===========
 -tutorials
-https://www.youtube.com/watch?v=72iEz5iopqQ&t=1881s
+
 
 
 

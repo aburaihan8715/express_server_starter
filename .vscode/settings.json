@@ -1,0 +1,65 @@
+// ======this is for workspace settings=====
+{
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#b40303",
+    "activityBar.foreground": "#edeaf0",
+    "activityBar.activeBackground": "#4b088e",
+    "statusBar.background": "#b40303",
+    "statusBar.foreground": "#edeaf0",
+    "titleBar.activeBackground": "#b40303",
+    "titleBar.activeForeground": "#edeaf0",
+  },
+  // ======this is for highlight settings=====
+  "todohighlight.isEnable": true,
+  "todohighlight.isCaseSensitive": true,
+  "todohighlight.keywords": [
+    {
+      "text": "NOTE:",
+      "color": "#fff",
+      "backgroundColor": "#bf0603",
+      "isWholeLine": false,
+    },
+    {
+      "text": "FIXME:",
+      "color": "#fff",
+      "backgroundColor": "#ff006e",
+      "isWholeLine": false,
+    },
+    {
+      "text": "TODO:",
+      "color": "#fff",
+      "backgroundColor": "#9d4edd",
+      "isWholeLine": false,
+    },
+    {
+      "text": "DOUBT:",
+      "color": "#fff",
+      "backgroundColor": "#3772ff",
+      "isWholeLine": false,
+    },
+  ],
+  "todohighlight.include": [
+    "**/*.js",
+    "** /*.jsx",
+    "**/*.ts",
+    "** /*.tsx",
+    "**/*.html",
+    "**/*.php",
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "todohighlight.exclude": [
+    "**/node_modules/**",
+    "**/bower_components/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.vscode/**",
+    "**/.github/**",
+    "**/_output/**",
+    "**/*.min.*",
+    "**/*.map",
+    "**/.next/**"
+  ],
+  "todohighlight.maxFilesForSearch": 5120,
+  "todohighlight.toggleURI": false
+}
